@@ -1,0 +1,30 @@
+                     Fresh      Milk   Grocery    Frozen  Detergents_Paper   Delicatessen  
+Fresh             1.000000  0.100510 -0.011854  0.345881         -0.101953   0.244690  
+Milk              0.100510  1.000000  0.728335  0.123994          0.661816   1.000000  
+Grocery          -0.011854  0.728335  1.000000 -0.040193          0.924641   0.406368  
+Frozen            0.345881  0.123994 -0.040193  1.000000         -0.131525   0.205497  
+Detergents_Paper -0.101953  0.661816  0.924641 -0.131525          1.000000   0.390947  
+Delicatessen      0.244690  0.406368  0.205497  0.390947          0.069291   0.069291  
+
+
+| Feature             | Dependencies                       | Type of function   |
+|---------------------|------------------------------------|--------------------|
+| fresh               | detergent and paper, grocery, milk | $\frac{1}{x}$      |
+| milk                | detergent and paper, grocery       | ${x}$              |
+|                     | frozen, fresh                      | $\frac{1}{x}$      |
+| grocery             | detergent and paper, milk          | ${x}$              |
+|                     | frozen, fresh                      | $\frac{1}{x}$      |
+| frozen              | detergent and paper, grocery, milk | $\frac{1}{x}$      |
+| detergent and paper | frozen, fresh                      | $\frac{1}{x}$      |
+|                     | grocery, milk                      | ${x}$              |
+
+
+Each PC has one dimension, and the mid-point has value 0. The sign (positive or negative) tells you the direction that a given variable in that PC is going on a single dimension vector.
+For example, if you have 5 variables, the first PC has an eigenvalue of 0.8, and the loadings of each variable in this PC are -0.8, -0.5, 0, 0.2, and 0.5, you can conclude that:
+1) Variable 3 doesn't play any role in explaining the variation on PC1 (Var3 has value = 0)
+2) Var4 has small role, whereas the others have sizable roles in explaining the variation due to that PC.
+3) Var1 will have greater impact than Var2 and Var5.
+4) There is a perfect contrast between Var2 and Var5
+5) FINALLY, the PC scores derived from this PC (linear function of this PC and the observed values for those variables) will show that individuals with negative PC scores will tent to have greater values of Var1 and Var2, and lower values for the remaining Vars, whereas individuals with PC scores greater than 0 will tend to have greater values of Var4 and Var5, and lower of the remaining. 
+
+What negative sign mean in PCA?. Available from: https://www.researchgate.net/post/what_negative_sign_mean_in_PCA [accessed Aug 24, 2017].
